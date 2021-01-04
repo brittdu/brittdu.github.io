@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Britt's World</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+</head>
+
+<body>
+	<div id="app">
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="pixel-main-menu" id="sticker" style="background-color: #edc7b7;">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pixelNav">
+
+                        <!-- Nav brand -->
+                        <!--a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a-->
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a v-bind:href="['index.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Home' : '主页' }}</a></li>
+                                    <li><a href="#">{{ en ? 'About Me' : '个人简介' }}</a></li>
+                                    <li><a href="#">{{ en ? 'Social Media' : '社交媒体' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['vlog.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Travel Vlog' : '旅行Vlog' }}</a></li>
+                                            <li><a v-bind:href="['mafengwo.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Mafengwo' : '马蜂窝' }}</a></li>
+											<li><a v-bind:href="['xiaohongshu.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Xiaohongshu' : '小红书' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Showreel' : '视频作品' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['feature_film.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Feature Films' : '剧情短片' }}</a></li>
+                                            <li><a v-bind:href="['documentary.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Documentaries' : '纪录短片' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Graphics' : '平面作品' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['photography.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Photography' : '摄影作品' }}</a></li>
+                                            <li><a v-bind:href="['design.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Design' : '设计作品' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Practices and Achievements' : '实践成果' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['prop.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Advertisements' : '广告片' }}</a></li>
+                                            <li><a v-bind:href="['album.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Albums' : '影集' }}</a></li>
+										</ul>
+									</li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+						
+						<div class="top-lang ml-5">
+							<a href="#" v-on:click="toggleLanguage">{{ en ? '中' : 'En' }}</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Team Area Start ##### -->
+    <section class="team-member-area" style="padding-top: 150px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                    <!-- Single Team Member -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-team-member mb-50">
+                            <img src="img/profile/avatar.jpg" alt="">
+                            <!-- Hover Text -->
+                            <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                <div class="hover--">
+                                    <h4>{{ en ? 'Beiyue Du' : '杜蓓越' }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>{{ en ? 'Personal Introduction' : '个人简介' }}</h2>
+                        <div style="text-align: left;" v-if="!en">
+                            <p>
+                                我叫杜蓓越，可以叫我Britt。
+                            </p>
+                            <br>
+                            <p>
+                                在我10岁生日时，我收到了人生中第一台数码相机，从那以后，我通过镜头看到了世界的其它模样，
+                                也看到人生更多可能性，也因此我选择了CUC的Digital Media这个专业进行更进一步的学习。
+                            </p>
+                            <br>
+                            <p>
+                                在校期间，我的课外经历进一步使我接触到数字媒体的影响力。作为CUC电视台技术部的团队负责人和BILIBILI上大学官方帐户的共同创始人。经过多次智能手机和数码相机的试验，我和团队成员们共同解决了从数码单反相机到网站的连接问题，并获得了更好的实时流媒体效果，目前获得了超过16w的粉丝。同时，我参与了2016-2018年三年的学生记者节晚会直播工作，在此期间应用了多种数字媒体动画，成功吸引了50,000多名观众。
+                            </p>
+                            <br>
+                            <p>
+                                除了校内的实践活动，我凭借出色的摄影作品，2016年被一家旅行平台陀螺旅行选拔为摄影师。我用相机记录所见的风景和人，并通过互联网和更多人分享。听到来自世界各地肯定的声音，我第一次感受到传播的魅力，于是热爱旅行的我创建了个人旅行账号，在帐号上分享照片和旅行攻略，慢慢的受到了更多人的认可（详情可见社交媒体页面）。
+                            </p>
+                            <br>
+                            <p>在数字媒体时代如何更好地表达自己？如何被更多人看见？成为我不断思考的问题，我尝试通过不同渠道寻找答案。</p>
+                            <br>
+                            <p>通过在中国传媒大学的学习，我受到了非常好的多媒体技术的教育，我也有幸去很多地方，感受不同的文化，用旅行VLOG记录自己对世界的探索。在尊重不同文化差异的同时，我也发现在媒体科技和网络媒体发展越来越快、全球化的今天，没有国家能真正阻止媒介的流通。</p>
+                            <br>
+                            <p>作为一个数字媒体的制作、传播者，我希望自己能通过影像探索世界，更进一步的了解传播领域的奥秘。</p>
+                        </div>
+                        <div style="text-align: left;" v-else>
+                            <p>
+                                My name is Du Beiyue, you can call me Britt.
+                            </p>
+                            <br>
+                            <p>
+                                I received my first digital camera on my 10th birthday. Since then, I have seen world appearances through the lens, and I have seen more possibilities in life. Therefore, I chose to major in Digital Media, communication university of China for further study.
+                            </p>
+                            <br>
+                            <p>
+                                During my college life, my extracurricular experience further exposed me to the influence of digital media. As the team leader of the technical department of CUCTV and the co-founder of the official university account of BILIBILI. After many experiments on smart phones and digital cameras, The team members and I worked together to solve the problem of connecting from digital SLR cameras to the website, and got better real-time streaming effects. Currently, we have won more than 160,00 fans in CUC account. At the same time, I participated in the live broadcast of the Student Reporter's Party from 2016 to 2018. During this period, I applied a variety of digital media animations and successfully attracted more than 50,000 viewers.
+                            </p>
+                            <br>
+                            <p>
+                                In addition to the practical activities on campus, In 2016 I was selected as a photographer by a travel platform called Torro Travel with outstanding photography. I use the camera to record the scenery and people I see and share it with more people through the Internet. I heard the affirmation from all over the world.For the first time, I felt the charm of communication. So created a personal travel account because I loved travel. I shared photos and travel tips on my account, and I was slowly recognized by more people. (See the social media page for details)
+                            </p>
+                            <br>
+                            <p>How to better express yourself in the digital media era? How to be seen by more people? Becoming a problem that I keep thinking about, I try to find answers through different channels.</p>
+                            <br>
+                            <p>Majoring in Digital Media Arts in Communication University of China, I have been educated in very good multimedia technology. I have travelled to many places, embracing different cultures and using vlogs to record my exploration of the world. I found that media technology and online media are developing faster and more globally nowadays. None of country can really stop the circulation of media.</p>
+                            <br>
+                            <p>As a producer and disseminator of digital media, I hope that I can explore the world through images and further understand the mysteries of communication.。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Team Area End ##### -->
+
+    <!-- ##### Prices Area Start ##### -->
+    <section class="pixel-prices-area d-flex flex-wrap">
+    
+        <!-- Single Price Table Area -->
+        <div class="single-price-table-area wow fadeInLeft" data-wow-delay="0.1s">
+            <a href="img/profile/cctv.jpg" class="zoom-img">
+                <img src="img/profile/cctv_thumb.jpg" alt="" class="mb-15">
+                <h4>{{ en ? 'China Central Television Scholarship' : '中央广播电视台总奖' }}</h4>
+                <p v-if="en">Top 1%, 2018</p>
+            </a>
+        </div>
+    
+        <!-- Single Price Table Area -->
+        <div class="single-price-table-area wow fadeInDown" data-wow-delay="0s">
+            <a href="img/profile/sony.jpg" class="zoom-img">
+                <img src="img/profile/sony_thumb.jpg" alt="" class="mb-15">
+                <h4>{{ en ? 'Sony Television Practice Scholarship' : '索尼杯电视实践奖' }}</h4>
+                <p v-if="en">Top 5%, 2017</p>
+            </a>
+        </div>
+    
+        <!-- Single Price Table Area -->
+        <div class="single-price-table-area wow fadeInRight" data-wow-delay="0.1s">
+            <a href="img/profile/sanhao.jpg" class="zoom-img">
+                <img src="img/profile/sanhao_thumb.jpg" alt="" class="mb-15">
+                <h4>{{ en ? 'Merit Student' : '三好学生' }}</h4>
+                <p v-if="en">Top 5%, 2018, 2019</p>
+            </a>
+        </div>
+    
+        <!-- Single Price Table Area -->
+        <div class="single-price-table-area wow fadeInLeft" data-wow-delay="0.2s">
+            <a href="img/profile/reporter.jpg" class="zoom-img">
+                <img src="img/profile/reporter_thumb.jpg" alt="" class="mb-15">
+                <h4>{{ en ? 'Outstanding Student Journalist' : '优秀学生记者' }}</h4>
+                <p v-if="en">Top 10%, 2017</p>
+            </a>
+        </div>
+    
+        <div class="single-price-table-area wow fadeInUp" data-wow-delay="0.2s">
+            <a href="img/profile/ex_leader.jpg" class="zoom-img">
+                <img src="img/profile/ex_leader_thumb.jpg" alt="" class="mb-15">
+                <h4>{{ en ? 'Outstanding Student Leader' : '优秀学生干部' }}</h4>
+                <p v-if="en">Top 5%, 2017, 2019</p>
+            </a>
+        </div>
+    
+        <div class="single-price-table-area wow fadeInRight" data-wow-delay="0.2s">
+            <a href="img/profile/third_scholarship.jpg" class="zoom-img">
+                <img src="img/profile/third_scholarship_thumb.jpg" alt="" class="mb-15">
+                <h4>{{ en ? '3rd Prize Scholarship' : '三等奖学金' }}</h4>
+                <p v-if="en">Top 10%, 2018</p>
+            </a>
+        </div>
+    
+    </section>
+    <!-- ##### Prices Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+                    <div class="row">
+                        <!-- Single Footer Widget -->
+                        <div class="col-sm-4">
+                            <div class="single-footer-widget mb-50">
+                                <p><i class="fa fa-phone"></i><a href="tel:  +8615611579060"> +86 15611579060</a></p>
+                            </div>
+                        </div>
+						
+						<div class="col-sm-4">
+							<div class="single-footer-widget mb-50">
+								<p><i class="fa fa-envelope"></i> <a href="mailto:brittt@163.com">brittt@163.com</a></p>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-content">
+                            <!-- Copywrite Text -->
+                            <p class="copywrite-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy; {{ year }} Beiyue Du, All Rights Reserved. Developed by <a href="https://github.com/zx1239856/" target="_blank">zx1239856</a>.  Powered By <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Colorlib</a> and <a href="https://vuejs.org" target="_blank">Vue.js</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                    </div>
+                    <!--div class="col-12 col-md-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div-->
+                </div>
+            </div>
+        </div>
+    </footer>
+	</div>
+    <!-- ##### Footer Area Start ##### -->
+	<script src="js/main.js"></script>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Popper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>

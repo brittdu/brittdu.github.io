@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Britt's World</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="pixel-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pixelNav">
+
+                        <!-- Nav brand -->
+                        <!--a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a-->
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a v-bind:href="['index.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Home' : '主页' }}</a></li>
+                                    <li><a v-bind:href="['personal.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'About Me' : '个人简介' }}</a></li>
+                                    <li><a href="#">{{ en ? 'Social Media' : '社交媒体' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['vlog.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Travel Vlog' : '旅行Vlog' }}</a></li>
+                                            <li><a v-bind:href="['mafengwo.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Mafengwo' : '马蜂窝' }}</a></li>
+											<li><a v-bind:href="['xiaohongshu.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Xiaohongshu' : '小红书' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Showreel' : '视频作品' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['feature_film.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Feature Films' : '剧情短片' }}</a></li>
+                                            <li><a v-bind:href="['documentary.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Documentaries' : '纪录短片' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Graphics' : '平面作品' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['photography.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Photography' : '摄影作品' }}</a></li>
+                                            <li><a v-bind:href="['design.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Design' : '设计作品' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Practices and Achievements' : '实践成果' }}</a>
+										<ul class="dropdown">
+											<li><a href="#">{{ en ? 'Advertisements' : '广告片' }}</a></li>
+                                            <li><a v-bind:href="['album.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Albums' : '影集' }}</a></li>
+										</ul>
+									</li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+						
+						<div class="top-lang ml-5">
+							<a href="#" v-on:click="toggleLanguage">{{ en ? '中' : 'En' }}</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/prop/bg.jpg);">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>{{ en ? 'Advertisements' : '广告片' }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="elements-area" style="padding-top: 30px; padding-bottom: 0">
+    <!-- ##### Accordians ##### -->
+    <div class="col-md-10 offset-md-1">
+        <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+            <!-- single accordian area -->
+            <div class="panel single-accordion">
+                <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    {{ en ? 'Advertisement of CUCTV Technology Department, Post-processing' : 'CUCTV技术部宣传片 后期'}}
+                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                        </a></h6>
+                <div id="collapseOne" class="accordion-content collapse show">
+                    <p>{{ en ? 'This is a promotional film of CUCTV Technology Department in 2018. The main purpose of this film is to attract more freshmen to join the Technology Department and show the style of the it. The overall style and editing techniques of the film use some interesting ways, which can attract more people.' 
+                        : '这是2018年的中国传媒大学电视台（CUCTV）技术部宣传片，该片主要目的是为了吸引更多的新生加入技术部，展现技术部的风采。本片的整体风格和剪辑手法都运用了一些有趣的方式，这种方式能吸引到更多的人。'}}</p>
+                        <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                <div class="single-team-member">
+                                    <img src="img/prop/cuctv.jpg" alt="">
+                                    <!-- Hover Text -->
+                                    <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                        <div class="hover--">
+                                            <div class="social-info">
+                                                    <a href="https://www.youtube.com/watch?v=S1wYeaUam6c" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                    <a href="https://www.bilibili.com/video/av58248823/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            <!-- single accordian area -->
+            <div class="panel single-accordion">
+                <h6>
+                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">
+                        {{ en ? 'Advertisement of Ehomie, Animation Post-processing' : 'e乡e家网络公司广告 动画后期'}}
+                            <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                            <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                            </a>
+                </h6>
+                <div id="collapseTwo" class="accordion-content collapse">
+                    <p>{{ en ? 'This is a promotional advertisement for the company when I am in the internship. The horizontal version and the vertical version are put on different platforms such as YouTube, Tik Tok and so on, which have won good results.' : 
+                        '这是为实习公司制作的宣传广告，横版和竖版分别投放到了YouTube，抖音等不同的平台，赢得了良好的效果。'}}</p>
+                        <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                <div class="single-team-member">
+                                    <img src="img/prop/ehomie.png" alt="">
+                                    <!-- Hover Text -->
+                                    <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                        <div class="hover--">
+                                            <div class="social-info">
+                                                    <a href="https://www.youtube.com/watch?v=v02F57jAYbo" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                    <a href="https://www.bilibili.com/video/av58322452/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+                    <div class="row">
+                        <!-- Single Footer Widget -->
+                        <div class="col-sm-4">
+                            <div class="single-footer-widget mb-50">
+                                <p><i class="fa fa-phone"></i><a href="tel:  +8615611579060"> +86 15611579060</a></p>
+                            </div>
+                        </div>
+						
+						<div class="col-sm-4">
+							<div class="single-footer-widget mb-50">
+								<p><i class="fa fa-envelope"></i> <a href="mailto:brittt@163.com">brittt@163.com</a></p>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-content">
+                            <!-- Copywrite Text -->
+                            <p class="copywrite-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy; {{ year }} Beiyue Du, All Rights Reserved. Developed by <a href="https://github.com/zx1239856/" target="_blank">zx1239856</a>.  Powered By <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Colorlib</a> and <a href="https://vuejs.org" target="_blank">Vue.js</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                    </div>
+                    <!--div class="col-12 col-md-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div-->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+</div>
+
+	<script src="js/main.js"></script>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Popper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>

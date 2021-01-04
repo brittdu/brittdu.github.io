@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Britt's World</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- Preloader -->
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area">
+            <!-- Navbar Area -->
+            <div class="pixel-main-menu" id="sticker">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container-fluid">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="pixelNav">
+
+                            <!-- Nav brand -->
+                            <!--a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a-->
+
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="classy-menu">
+
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a
+                                                v-bind:href="['index.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Home' : '主页' }}</a>
+                                        </li>
+                                        <li><a v-bind:href="['personal.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'About Me' : '个人简介' }}</a></li>
+                                        <li><a href="#">{{ en ? 'Social Media' : '社交媒体' }}</a>
+                                            <ul class="dropdown">
+                                                <li><a v-bind:href="['vlog.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Travel Vlog' : '旅行Vlog' }}</a></li>
+                                                <li><a v-bind:href="['mafengwo.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Mafengwo' : '马蜂窝' }}</a></li>
+                                                <li><a v-bind:href="['xiaohongshu.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Xiaohongshu' : '小红书' }}</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">{{ en ? 'Showreel' : '视频作品' }}</a>
+                                            <ul class="dropdown">
+                                                <li><a
+                                                        v-bind:href="['feature_film.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Feature Films' : '剧情短片' }}</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="['documentary.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Documentaries' : '纪录短片' }}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">{{ en ? 'Graphics' : '平面作品' }}</a>
+                                            <ul class="dropdown">
+                                                <li><a
+                                                        v-bind:href="['photography.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Photography' : '摄影作品' }}</a>
+                                                </li>
+                                                <li><a
+                                                        v-bind:href="['design.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Design' : '设计作品' }}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">{{ en ? 'Practices and Achievements' : '实践成果' }}</a>
+                                            <ul class="dropdown">
+                                                <li><a
+                                                        v-bind:href="['prop.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Advertisements' : '广告片' }}</a>
+                                                </li>
+                                                <li><a href="#">{{ en ? 'Albums' : '影集' }}</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+
+                            <div class="top-lang ml-5">
+                                <a href="#" v-on:click="toggleLanguage">{{ en ? '中' : 'En' }}</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ##### Header Area End ##### -->
+
+        <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/album/bg.jpg);">
+            <div class="container-fluid h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="breadcrumb-content">
+                            <h2>{{ en ? 'Photo Albums' : '影集' }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ##### Feature Area Start ##### -->
+        <!--section class="pixel-feature-area d-flex flex-wrap"-->
+        <section class="pixel-feature-area d-flex flex-wrap">
+            <!-- Feature Thumbnail -->
+            <img src="img/album/miao.jpg" class="feature-thumbnail-50 bg-img"/>
+            <!--div class="feature-thumbnail bg-img" style="background-image: url(img/album/miao.jpg);"></div-->
+
+            <!-- Feature Content -->
+            <div class="feature-content-50">
+                <h1>{{ en ? 'Memories of Miao Village':'《酸汤剪影》-苗寨实践成果' }}</h1>
+                <p>{{ en ? 'Memories of Miao Village is group work, which was yielded from our social practice in Miao Village. The album comprises two major sections, landscape and humanity respectively. We try to illustrate the unique and glamorous property of this minority group through multiple aspects and various shot types.':'酸汤剪影是集体作品，为苗寨实践考察的成果之一，分为风景和人文两大板块。从多个角度和利用不同的镜头来展现这个少数民族的别样风采。'}}
+                </p>
+                <a href="pdf/memories_of_miao_village.pdf" target="_blank" class="btn pixel-btn mt-15">{{ en ? 'Click to Download' : '点击下载'}}</a>
+            </div>
+        </section>
+        <!-- ##### Feature Area End ##### -->
+
+
+
+        <!-- ##### Feature Area Start ##### -->
+        <section class="pixel-feature-area d-flex flex-wrap">
+            <!-- Feature Content -->
+            <div class="feature-content-50">
+                <h1>{{ en ? 'Time - Photos of narrative' : '《Time》照片叙事'}}</h1>
+                <p>{{ en ? 'This album is a narrative one, which will tell a story of time through the sequence of photos.' : '此影集为故事影集，通过照片来串联讲述了一个时间的故事。' }}</p>
+                <a href="pdf/time.pdf" target="_blank" class="btn pixel-btn mt-15">{{ en ? 'Click to Download' : '点击下载'}}</a>
+            </div>
+
+            <img src="img/album/time.jpg" class="feature-thumbnail-50 bg-img"/>
+        </section>
+        <!-- ##### Feature Area End ##### -->
+
+        <!-- ##### Feature Area Start ##### -->
+        <section class="pixel-feature-area d-flex flex-wrap">
+            <!-- Feature Thumbnail -->
+            <img src="img/album/nz.jpg" class="feature-thumbnail-50 bg-img"/>
+
+            <!-- Feature Content -->
+            <div class="feature-content-50">
+                <h1>{{ en ? 'New Zealand' : '新西兰影集'}}</h1>
+                <p>{{ en ? 'This is my personal work, which can be divided into three major sections, humanity, landscape and architecture. During my practice in New Zealand, I was deeply attracted by the glamourous landscape and friendly local residents. Having taken many photos, I hope that this album can help to retain this wonderful memory.' : '此影集为个人作品，主要分为人文、风景和建筑三大板块。我在新西兰实践期间，被当地迷人的风景和友好地本地人所吸引，拍摄了许多照片，希望影集能留住这些美好。'}}</p>
+                <a href="pdf/new_zealand.pdf" target="_blank" class="btn pixel-btn mt-15">{{ en ? 'Click to Download' : '点击下载'}}</a>
+            </div>
+        </section>
+        <!-- ##### Feature Area End ##### -->
+
+        <!-- ##### Feature Area Start ##### -->
+        <section class="pixel-feature-area d-flex flex-wrap">
+            <!-- Feature Content -->
+            <div class="feature-content-50">
+                <h1>{{ en ? 'Composition: Cookbook' : '排版作品 Cookbook'}}</h1>
+                <p>{{ en ? 'This composition is an interactive PDF, which can be controlled via the button in the right upper corner.' : '此排版为互动式PDF，可通过右上角的按钮控制。' }}</p>
+                <a href="pdf/cookbook.pdf" target="_blank" class="btn pixel-btn mt-15">{{ en ? 'Click to Download' : '点击下载'}}</a>
+            </div>
+
+            <!-- Feature Thumbnail -->
+            <img src="img/album/cook.jpg" class="feature-thumbnail-50 bg-img"/>
+        </section>
+        <!-- ##### Feature Area End ##### -->
+
+        <!-- ##### Footer Area Start ##### -->
+        <footer class="footer-area section-padding-100-0">
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+                        <div class="row">
+                            <!-- Single Footer Widget -->
+                            <div class="col-sm-4">
+                                <div class="single-footer-widget mb-50">
+                                    <p><i class="fa fa-phone"></i><a href="tel:  +8615611579060"> +86 15611579060</a></p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="single-footer-widget mb-50">
+                                    <p><i class="fa fa-envelope"></i> <a href="mailto:brittt@163.com">brittt@163.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copywrite Area -->
+            <div class="copywrite-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                            <div class="copywrite-content">
+                                <!-- Copywrite Text -->
+                                <p class="copywrite-text">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy; {{ year }} Beiyue Du, All Rights Reserved. Developed by <a href="https://github.com/zx1239856/" target="_blank">zx1239856</a>.  Powered By <i
+                                        class="fa fa-heart-o" aria-hidden="true"></i> <a href="https://colorlib.com"
+                                        target="_blank">Colorlib</a> and <a href="https://vuejs.org" target="_blank">Vue.js</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </p>
+                            </div>
+                        </div>
+                        <!--div class="col-12 col-md-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div-->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ##### Footer Area Start ##### -->
+    </div>
+
+    <script src="js/main.js"></script>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Popper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>

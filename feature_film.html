@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Britt's World</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="pixel-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pixelNav">
+
+                        <!-- Nav brand -->
+                        <!--a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a-->
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a v-bind:href="['index.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Home' : '主页' }}</a></li>
+                                    <li><a v-bind:href="['personal.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'About Me' : '个人简介' }}</a></li>
+                                    <li><a href="#">{{ en ? 'Social Media' : '社交媒体' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['vlog.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Travel Vlog' : '旅行Vlog' }}</a></li>
+                                            <li><a v-bind:href="['mafengwo.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Mafengwo' : '马蜂窝' }}</a></li>
+											<li><a v-bind:href="['xiaohongshu.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Xiaohongshu' : '小红书' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Showreel' : '视频作品' }}</a>
+										<ul class="dropdown">
+											<li><a href="#">{{ en ? 'Feature Films' : '剧情短片' }}</a></li>
+                                            <li><a v-bind:href="['documentary.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Documentaries' : '纪录短片' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Graphics' : '平面作品' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['photography.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Photography' : '摄影作品' }}</a></li>
+                                            <li><a v-bind:href="['design.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Design' : '设计作品' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Practices and Achievements' : '实践成果' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['prop.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Advertisements' : '广告片' }}</a></li>
+                                            <li><a v-bind:href="['album.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Albums' : '影集' }}</a></li>
+										</ul>
+									</li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+						
+						<div class="top-lang ml-5">
+							<a href="#" v-on:click="toggleLanguage">{{ en ? '中' : 'En' }}</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/feature-film/bg.jpg);">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>{{ en ? 'Feature Films' : '剧情片' }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="elements-area" style="padding-top: 30px; padding-bottom: 0">
+    <!-- ##### Accordians ##### -->
+    <div class="col-md-10 offset-md-1">
+        <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+            <!-- single accordian area -->
+            <div class="panel single-accordion">
+                <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    {{ en ? 'Love Appraiser - Cinematography' : '《蝉茧-鉴情师》摄像'}}
+                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                        </a></h6>
+                <div id="collapseOne" class="accordion-content collapse show">
+                    <p>{{ en ? 'With the development of the society, a new type of special profession - emotional appraiser emerged as the times require. Women are always curious about whether their boyfriend or husband only loves her. They all feel that their boyfriend or husband can stand the test of an appraiser. However, successes over and over have made the appraiser proud and not so vigilant as before. One careless time, the appraiser is framed by the client...' 
+                        : '随着时代发展， 一个新型的特殊职业—鉴情师 应运而生。女人总是好奇自己的男朋友或者老公是不是只爱她一个人，都觉得自己的对象可以经受住鉴情师的考验，然而一次又一次的成功让鉴情师逐渐高傲，也没有原来那么警惕了，一次不小心之中，被客户陷害……'}}</p>
+                    <p>{{ en ? 'Team: Du Beiyue, Luo Xinyuniu, Niu Jiaxin, Huang Zilin, Yang Yuhan, Zhao Yuexiang, Lin Zeyong' 
+                        : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣 黄梓琳 杨宇涵 赵越泱 林泽永'}}</p>
+                        <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                <div class="single-team-member">
+                                    <img src="img/feature-film/jianqingshi.jpg" alt="">
+                                    <!-- Hover Text -->
+                                    <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                        <div class="hover--">
+                                            <div class="social-info">
+                                                    <a href="https://www.youtube.com/watch?v=855r8RI2fzs&t=227s" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                    <a href="https://www.bilibili.com/video/av57939213/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            <!-- single accordian area -->
+            <div class="panel single-accordion">
+                <h6>
+                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">
+                        {{ en ? 'Looking Forward to Love (MV) - Cinematography & Post-processing' : '《期待爱MV》 摄像/后期'}}
+                            <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                            <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                            </a>
+                </h6>
+                <div id="collapseTwo" class="accordion-content collapse">
+                    <p>{{ en ? 'The original MV of this song has been many years ago. At that time, Taiwanese idols were meant a lot to us, pursuing the memory of the past and combining with our own creativity. The music MV of this song was also used to illustrate the secret love between a young girl and a young boy.' : 
+                        '这首歌的原版MV已经是很多年前的了，那个时代，台湾偶像是我们的全部，追寻着往时的记忆，与自己的创意结合，同样利用这首歌的音乐MV阐述了一对年轻男女的暗恋情愫。'}}</p>
+                    <p>{{ en ? 'Team: CUCTV TECHNOLOGY DEPARTMENT' : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣 朱于强 郑明祈等CUCTV技术部成员' }}</p>
+                        <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                <div class="single-team-member">
+                                    <img src="img/feature-film/qidaiai.jpg" alt="">
+                                    <!-- Hover Text -->
+                                    <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                        <div class="hover--">
+                                            <div class="social-info">
+                                                    <a href="https://www.youtube.com/watch?v=o4ykCb-2MhU" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                    <a href="https://www.bilibili.com/video/av58072209/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- single accordian area -->
+            <div class="panel single-accordion">
+                    <h6>
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseThree" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">
+                            {{ en ? 'Pac-man’s adventure - Screenwriter, Director, Cinematography & Post-processing' : '《豆豆人的奇幻历险记》 编剧/导演/摄像/后期'}}
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                    </h6>
+                    <div id="collapseThree" class="accordion-content collapse">
+                        <p>{{ en ? 'Pac-man will fall into a different fantasy world at every level. Every world seems to have special functions. Can Pac-man bravely break through and win the game? The short film uses many different shooting and post-production techniques to express the strange functions of each world.' : 
+                            '豆豆人在每一关都会掉落到一个不一样的奇幻世界，每个世界仿佛都有特异功能，而豆豆人能否勇敢闯关最后赢得游戏呢？ 该短片利用了许多不一样的拍摄以及后期手段来表达每个世界的奇异功能。'}}</p>
+                        <p>{{ en ? 'Team: Communication University of China, Du Beiyue, Luo Xinyu' : '创作团队：中国传媒大学 杜蓓越 罗欣雨' }}</p>
+                            <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                    <div class="single-team-member">
+                                        <img src="img/feature-film/pockman.png" alt="">
+                                        <!-- Hover Text -->
+                                        <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                            <div class="hover--">
+                                                <div class="social-info">
+                                                        <a href="https://www.youtube.com/watch?v=xk3tRFycT1U" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                        <a href="https://www.bilibili.com/video/av57929445/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+            <!-- single accordian area -->
+            <div class="panel single-accordion">
+                    <h6>
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseFour" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">
+                            {{ en ? 'On, My Wife - Art & Cinematography' : '《呵，女人》 美术/摄像'}}
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                    </h6>
+                    <div id="collapseFour" class="accordion-content collapse">
+                        <p>{{ en ? 'This film describes the wife\'s distrust of her husband after marriage in a funny way. She wants to find out what in his mobile phone. It reflects the current crisis in most marriages - apathy between husband and wife, mobile phones occupy most of the time. How on earth should we balance the relationship in marriage? ' : 
+                            '本片以搞笑的手法描述了妻子对于丈夫婚后的不信任，想要拿他手机来看看到底是怎么回事。反映了目前大多数婚姻中存在的危机——夫妻间的冷漠，手机占据了大多数时间。我们到底该如何平衡婚姻中的关系呢？'}}</p>
+                        <p>{{ en ? 'Team: Du Beiyue, Luo Xinyu, Niu Jiaxin' : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣' }}</p>
+                            <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                    <div class="single-team-member">
+                                        <img src="img/feature-film/he_nvren.jpg" alt="">
+                                        <!-- Hover Text -->
+                                        <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                            <div class="hover--">
+                                                <div class="social-info">
+                                                        <a href="https://www.youtube.com/watch?v=W757xux-bgU" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                        <a href="https://www.bilibili.com/video/av57928731/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="panel single-accordion">
+                    <h6>
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseFive" data-parent="#accordion" data-toggle="collapse" href="#collapseFive">
+                            {{ en ? 'Latte & Caramel - Art & Cinematography' : '《焦糖拿铁》 美术/摄像'}}
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                    </h6>
+                    <div id="collapseFive" class="accordion-content collapse">
+                        <p>{{ en ? 'This short movie mainly tells the story of a girl\'s secret love in a coffee shop. It shows all kinds of caution when a girl is secretly in love. The inner thoughts of the characters are expressed through lens language rather than words.' : 
+                            '本片主要讲述了一个女孩的咖啡厅暗恋故事，表现了女孩子暗恋时候各种小心思。通过镜头语言而不是文字表现了人物的内心想法。'}}</p>
+                        <p>{{ en ? 'Team: Du Beiyue, Luo Xinyu, Niu Jiaxin' : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣' }}</p>
+                            <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                    <div class="single-team-member">
+                                        <img src="img/feature-film/jiaotangnatie.jpg" alt="">
+                                        <!-- Hover Text -->
+                                        <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                            <div class="hover--">
+                                                <div class="social-info">
+                                                        <a href="https://www.youtube.com/watch?v=QL360rzqNmQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                        <a href="https://www.bilibili.com/video/av57927698/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="panel single-accordion">
+                    <h6>
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseSix" data-parent="#accordion" data-toggle="collapse" href="#collapseSix">
+                            {{ en ? 'HER or HIM Reversal End Series 1 - Screenwriter, Director, Cinematography & Post-processing' : '《她他》反转系列短片1 编剧/导演/摄像/后期'}}
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                    </h6>
+                    <div id="collapseSix" class="accordion-content collapse">
+                        <p>{{ en ? 'This is a suspense style short film, she found that someone took her medicine, chased out, but found that she chased herself? So who is the man?' : 
+                            '这是个悬疑风格的短片，她发现有人拿走了自己的东西，追出去，但是发现，追的是自己？那到底男人是谁？'}}</p>
+                        <p>{{ en ? 'Team: Du Beiyue, Luo Xinyu, Niu Jiaxin, Huang Zilin, Yang Yuhan, Zhao Yueyang, Qu Jialin' : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣 黄梓琳 杨宇涵 赵越泱 曲家霖' }}</p>
+                            <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                    <div class="single-team-member">
+                                        <img src="img/feature-film/tata_1.jpg" alt="">
+                                        <!-- Hover Text -->
+                                        <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                            <div class="hover--">
+                                                <div class="social-info">
+                                                        <a href="https://www.youtube.com/watch?v=HoeBkThIHcw" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                        <a href="https://www.bilibili.com/video/av57933582/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="panel single-accordion">
+                    <h6>
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseSeven" data-parent="#accordion" data-toggle="collapse" href="#collapseSeven">
+                            {{ en ? 'HER or HIM Reversal End Series 2 - Director & Post-processing' : '《她他》反转系列短片2 导演/后期'}}
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                    </h6>
+                    <div id="collapseSeven" class="accordion-content collapse">
+                        <p>{{ en ? 'Sitting in the last row of the class, the \"learning slag\" like the beautiful girl in the front row who is \"learning hegemony\". He conveys a little note of love to her, but……think it\'s a little note to convey love, the result is just to press for debt.' : 
+                            '班里坐在最后一排的“学渣”喜欢前排一个漂亮的女生“学霸”，向她传递了爱的小纸条，但是…以为是传递爱情的小纸条，结果只是催债。'}}</p>
+                        <p>{{ en ? 'Team: Du Beiyue, Luo Xinyu, Niu Jiaxin, Huang Zilin, Yang Yuhan, Zhao Yueyang, Qu Jialin' : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣 黄梓琳 杨宇涵 赵越泱 曲家霖' }}</p>
+                            <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                    <div class="single-team-member">
+                                        <img src="img/feature-film/tata_2.jpg" alt="">
+                                        <!-- Hover Text -->
+                                        <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                            <div class="hover--">
+                                                <div class="social-info">
+                                                        <a href="https://www.youtube.com/watch?v=cJ0dnabALzc" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                        <a href="https://www.bilibili.com/video/av57936277/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="panel single-accordion">
+                    <h6>
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseEight" data-parent="#accordion" data-toggle="collapse" href="#collapseEight">
+                            {{ en ? 'Black or White - Producer & Post-processing' : '《众说》 制片/后期'}}
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                    </h6>
+                    <div id="collapseEight" class="accordion-content collapse">
+                        <p>{{ en ? 'The short film mainly tells the story of a girl who is confronted with sexual harassment from her supervisor and is confused about whether to report it. In fact, the three people in the play are all herself, and the other two disputes are just the externalization of her inner feelings. We hope that through this film, we can express to you that girls should be brave to face sexual harassment in the workplace and to defend their rights.' : 
+                            '该片主要是讲述一个女孩面对上司的性骚扰，心里纠结要不要举报的故事。剧中的三人其实都是她一个人，另外两个争执的人只是她内心情绪的外化。我们希望通过这个片子，向大家表达面对职场性骚扰，女孩们应该勇敢面对，敢于捍卫自己的权利。'}}</p>
+                        <p>{{ en ? 'Team: Du Beiyue, Luo Xinyu, Niu Jiaxin' : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣' }}</p>
+                            <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                    <div class="single-team-member">
+                                        <img src="img/feature-film/zhongshuo.jpg" alt="">
+                                        <!-- Hover Text -->
+                                        <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                            <div class="hover--">
+                                                <div class="social-info">
+                                                        <!--a href="https://www.youtube.com/watch?v=cJ0dnabALzc" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a-->
+                                                        <a href="https://www.bilibili.com/video/av57921128/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="panel single-accordion">
+                    <h6>
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseNine" data-parent="#accordion" data-toggle="collapse" href="#collapseNine">
+                            {{ en ? 'Meet - Screenwriter, Cinematography & Post-processing' : '《偶遇》 编剧/摄像/后期'}}
+                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                    </h6>
+                    <div id="collapseNine" class="accordion-content collapse">
+                        <p>{{ en ? 'An occasional encounter took place on the campus road. Two people fell in love with each other at first sight, and then began a sweet campus love. However... Everything is just fantasy. This love is over before it starts.' : 
+                            '一段偶遇发生在校园小路上，两个人对彼此一见钟情，然后开始了一段甜甜蜜蜜的校园恋爱。然而…一切都只是幻想。这段恋爱还没开始，就结束了。'}}</p>
+                        <p>{{ en ? 'Team: Du Beiyue, Luo Xinyu, Niu Jiaxin' : '创作团队：中国传媒大学 杜蓓越 罗欣雨 牛佳欣' }}</p>
+                            <div class="col-12 col-md-8 col-lg-8 offset-lg-2 offset-md-2 mt-15 mb-15">
+                                    <div class="single-team-member">
+                                        <img src="img/feature-film/ouyu.jpg" alt="">
+                                        <!-- Hover Text -->
+                                        <div class="hover-text d-flex align-items-end justify-content-center text-center">
+                                            <div class="hover--">
+                                                <div class="social-info">
+                                                        <a href="https://www.youtube.com/watch?v=ESk04VxCzkY" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                                        <a href="https://www.bilibili.com/video/av57932043/" target="_blank"><img src="img/bilibili.svg"/></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+                    <div class="row">
+                        <!-- Single Footer Widget -->
+                        <div class="col-sm-4">
+                            <div class="single-footer-widget mb-50">
+                                <p><i class="fa fa-phone"></i><a href="tel:  +8615611579060"> +86 15611579060</a></p>
+                            </div>
+                        </div>
+						
+						<div class="col-sm-4">
+							<div class="single-footer-widget mb-50">
+								<p><i class="fa fa-envelope"></i> <a href="mailto:brittt@163.com">brittt@163.com</a></p>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-content">
+                            <!-- Copywrite Text -->
+                            <p class="copywrite-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy; {{ year }} Beiyue Du, All Rights Reserved. Developed by <a href="https://github.com/zx1239856/" target="_blank">zx1239856</a>.  Powered By <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Colorlib</a> and <a href="https://vuejs.org" target="_blank">Vue.js</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                    </div>
+                    <!--div class="col-12 col-md-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div-->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+</div>
+
+	<script src="js/main.js"></script>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Popper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>

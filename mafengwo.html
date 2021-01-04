@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Britt's World</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+</head>
+
+<body>
+	<div id="app">
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="pixel-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pixelNav">
+
+                        <!-- Nav brand -->
+                        <!--a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a-->
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a v-bind:href="['index.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Home' : '主页' }}</a></li>
+                                    <li><a v-bind:href="['personal.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'About Me' : '个人简介' }}</a></li>
+                                    <li><a href="#">{{ en ? 'Social Media' : '社交媒体' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['vlog.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Travel Vlog' : '旅行Vlog' }}</a></li>
+                                            <li><a href="#">{{ en ? 'Mafengwo' : '马蜂窝' }}</a></li>
+											<li><a v-bind:href="['xiaohongshu.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Xiaohongshu' : '小红书' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Showreel' : '视频作品' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['feature_film.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Feature Films' : '剧情短片' }}</a></li>
+                                            <li><a v-bind:href="['documentary.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Documentaries' : '纪录短片' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Graphics' : '平面作品' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['photography.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Photography' : '摄影作品' }}</a></li>
+                                            <li><a v-bind:href="['design.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Design' : '设计作品' }}</a></li>
+										</ul>
+									</li>
+									<li><a href="#">{{ en ? 'Practices and Achievements' : '实践成果' }}</a>
+										<ul class="dropdown">
+											<li><a v-bind:href="['prop.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Advertisements' : '广告片' }}</a></li>
+                                            <li><a v-bind:href="['album.html?lang=' + (en ? 'en':'cn')]">{{ en ? 'Albums' : '影集' }}</a></li>
+										</ul>
+									</li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+						
+						<div class="top-lang ml-5">
+							<a href="#" v-on:click="toggleLanguage">{{ en ? '中' : 'En' }}</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/mafengwo/bg.jpg);">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>{{ en ? 'Mafengwo' : '马蜂窝' }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Feature Area Start ##### -->
+    <!--section class="pixel-feature-area d-flex flex-wrap"-->
+    <section class="pixel-feature-area d-flex flex-wrap">
+        <!-- Feature Thumbnail -->
+        <div class="container feature-content-50 d-flex">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-12">
+                        <!-- Section Heading -->
+                        <div class="section-heading" v-if="!en">
+                            <p>马蜂窝是中国专注于旅游社交的APP和网站，在这里，热爱旅行的人分享自己的生活和旅行故事。我在这里分享的旅行故事意外的收获了很多的点赞和关注，并且被官方授予“笔记达人”，“攻略作者”“指路者”等称号。这是运用我的专业能力，在旅行的过程中用图像和视频记录，并且在网上取得了良好传播效果的最好案例。</p>
+                            <p>· 我把旅行经历撰写成了游记，平均每篇阅读量高达1w+ </p>
+                            <p>· 旅行中记录的笔记多篇被评为“精华”，并获得超过1w+的阅读和300+的点赞</p>
+                            <p>想进一步了解吗？ 点击：<a href="https://imfw.cn/l/116188765" target="_blank">https://imfw.cn/l/116188765</a></p>
+                        </div>
+                        <div class="section-heading" v-else>
+                            <p>MAFENGWO is an app and website dedicated to travel and socializing in China, where travelers who love to travel share their travel stories. The travel story I shared here unexpectedly gained a lot of praise and attention. What’s more, I was officially awarded the title of "notes talent", "Raiders author" and "pointer". This is the best example of using my professional skills to record images and videos during my travels and to achieve good communication results online.</p>
+                            <p>· I wrote my travel experience as a travelogue with an average reading rate over 1w+ per article.</p>
+                            <p>·The short notes recorded during the trip were rated as "Essence" and received more than 1w+ readings and 300+ likes.</p>
+                            <p>Want to know more? Click: <a href="https://imfw.cn/l/116188765" target="_blank">https://imfw.cn/l/116188765</a></p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Feature Content -->
+        <div class="container feature-content-50">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Testimonial Slides -->
+                        <div class="testimonial-slides owl-carousel">
+
+                            <!-- Single Slide -->
+                            <div class="single-testimonial-slide">
+                                <div class="row">
+                                    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                                        <a href="img/mafengwo/main.jpg" class="zoom-img">
+                                            <img class="owl-lazy" data-src="img/mafengwo/main.jpg">
+                                            <div
+                                                class="hover-content text-center d-flex align-items-center justify-content-center">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Slide -->
+                            <div class="single-testimonial-slide">
+                                    <div class="row">
+                                        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                                            <a href="img/mafengwo/travel_note.jpg" class="zoom-img">
+                                                <img class="owl-lazy" data-src="img/mafengwo/travel_note.jpg">
+                                                <div
+                                                    class="hover-content text-center d-flex align-items-center justify-content-center">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <!-- Single Slide -->
+                            <div class="single-testimonial-slide">
+                                    <div class="row">
+                                            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                                                <a href="img/mafengwo/note.jpg" class="zoom-img">
+                                                    <img class="owl-lazy" data-src="img/mafengwo/note.jpg">
+                                                    <div
+                                                        class="hover-content text-center d-flex align-items-center justify-content-center">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <!-- ##### Feature Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-md-9 col-lg-8 col-xl-7">
+                    <div class="row">
+                        <!-- Single Footer Widget -->
+                        <div class="col-sm-4">
+                            <div class="single-footer-widget mb-50">
+                                <p><i class="fa fa-phone"></i><a href="tel:  +8615611579060"> +86 15611579060</a></p>
+                            </div>
+                        </div>
+						
+						<div class="col-sm-4">
+							<div class="single-footer-widget mb-50">
+								<p><i class="fa fa-envelope"></i> <a href="mailto:brittt@163.com">brittt@163.com</a></p>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="copywrite-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-content">
+                            <!-- Copywrite Text -->
+                            <p class="copywrite-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy; {{ year }} Beiyue Du, All Rights Reserved. Developed by <a href="https://github.com/zx1239856/" target="_blank">zx1239856</a>.  Powered By <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank">Colorlib</a> and <a href="https://vuejs.org" target="_blank">Vue.js</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                    </div>
+                    <!--div class="col-12 col-md-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div-->
+                </div>
+            </div>
+        </div>
+    </footer>
+	</div>
+    <!-- ##### Footer Area Start ##### -->
+	<script src="js/main.js"></script>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Popper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>
